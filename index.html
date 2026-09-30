@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Moldar | Simulador de Capacidade Produtiva e Gargalos</title>
+  <meta name="description" content="Monte sua linha de produção, compare capacidade e meta e teste cenários com o Moldar. Simulador com foco inicial na indústria calçadista.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#17324D">
+  <link rel="canonical" href="https://SEU-DOMINIO.com/">
+  <meta property="og:site_name" content="Moldar">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Moldar | Simulador de Capacidade Produtiva e Gargalos">
+  <meta property="og:description" content="Veja onde a capacidade aperta e teste cenários antes de mexer na operação.">
+  <meta property="og:url" content="https://SEU-DOMINIO.com/">
+  <meta property="og:image" content="https://SEU-DOMINIO.com/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Moldar | Simulador de Capacidade Produtiva e Gargalos">
+  <meta name="twitter:description" content="Monte sua linha, compare capacidade e meta e teste cenários de produção.">
+  <meta name="twitter:image" content="https://SEU-DOMINIO.com/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {"@type":"WebSite","@id":"https://SEU-DOMINIO.com/#website","url":"https://SEU-DOMINIO.com/","name":"Moldar","inLanguage":"pt-BR"},
+      {"@type":"WebPage","@id":"https://SEU-DOMINIO.com/#webpage","url":"https://SEU-DOMINIO.com/","name":"Moldar | Simulador de Capacidade Produtiva e Gargalos","description":"Monte sua linha de produção, compare capacidade e meta e teste cenários com o Moldar.","inLanguage":"pt-BR","isPartOf":{"@id":"https://SEU-DOMINIO.com/#website"}},
+      {"@type":"WebApplication","@id":"https://SEU-DOMINIO.com/#app","name":"Moldar","url":"https://SEU-DOMINIO.com/simular/","description":"Simulador de capacidade produtiva para comparar etapas de uma linha de produção com a meta diária e testar cenários.","applicationCategory":"BusinessApplication","operatingSystem":"Web","inLanguage":"pt-BR","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"BRL"}}
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <script src="./assets/js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="./index.html" aria-label="Moldar - início">
+        <span class="brand-sole" aria-hidden="true"><img src="./assets/svg/brand-shoe.svg" alt=""></span>
+        <span>MOLDAR</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Abrir menu"><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Principal">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="./metodologia/index.html">Como calcula</a>
+        <a href="./diagnostico/index.html">Diagnóstico</a>
+        <a class="nav-cta" href="./simular/index.html">Abrir simulador <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="home-hero">
+      <div class="hero-blueprint" aria-hidden="true"><img src="./assets/svg/upper.svg" alt=""></div>
+      <div class="container hero-grid">
+        <div class="hero-copy reveal is-visible">
+          <div class="eyebrow"><span class="eyebrow-line"></span><span data-word-rotator>MAPEIE A PRODUÇÃO</span></div>
+          <h1>Sua produção não bate a meta. O problema pode não estar onde parece.</h1>
+          <p class="lead">Monte o fluxo, informe o que cada etapa consegue fazer e descubra onde vale investigar primeiro. Depois, teste uma mudança antes de mexer na operação.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="./simular/index.html">Simular minha produção</a>
+            <a class="btn btn-secondary" href="#como-funciona">Ver como funciona</a>
+          </div>
+          <div class="hero-proof" aria-label="Características do Moldar">
+            <span><b>✓</b> Sem cadastro</span>
+            <span><b>✓</b> Dados não salvos</span>
+            <span><b>✓</b> Comece com o que já sabe</span>
+          </div>
+        </div>
+
+        <div class="factory-hero reveal is-visible" data-factory-hero aria-label="Representação visual de uma linha de produção de calçados">
+          <div class="factory-room">
+            <div class="factory-wall">
+              <span class="wall-label">LINHA 01 · CALÇADO</span>
+              <span class="wall-light l1"></span><span class="wall-light l2"></span><span class="wall-light l3"></span>
+            </div>
+            <div class="factory-floor-grid"></div>
+            <div class="conveyor conveyor-main"><span class="belt-slats"></span></div>
+            <div class="moving-part" aria-hidden="true"><img src="./assets/svg/outsole.svg" alt=""></div>
+
+            <article class="factory-cell cell-cut is-ok">
+              <span class="cell-number">01</span><span class="cell-icon" aria-hidden="true">✂</span>
+              <strong>Corte</strong><small>650 pares/dia</small>
+            </article>
+            <article class="factory-cell cell-prep is-ok">
+              <span class="cell-number">02</span><span class="cell-icon stitch" aria-hidden="true"></span>
+              <strong>Preparação</strong><small>580 pares/dia</small>
+            </article>
+            <article class="factory-cell cell-sew is-low">
+              <span class="cell-number">03</span><span class="cell-icon stitch" aria-hidden="true"></span>
+              <strong>Costura</strong><small>460 pares/dia</small>
+            </article>
+            <article class="factory-cell cell-assembly is-low">
+              <span class="cell-number">04</span><span class="cell-icon last" aria-hidden="true"><img src="./assets/svg/outsole.svg" alt=""></span>
+              <strong>Montagem</strong><small>480 pares/dia</small>
+            </article>
+            <article class="factory-cell cell-finish is-ok">
+              <span class="cell-number">05</span><span class="cell-icon spark" aria-hidden="true">✦</span>
+              <strong>Acabamento</strong><small>550 pares/dia</small>
+            </article>
+
+            <div class="factory-alert">
+              <span>Primeiro ponto para investigar</span>
+              <strong>Costura</strong>
+              <small>Faltam 40 pares/dia para a meta demonstrativa</small>
+            </div>
+            <div class="factory-legend"><span><i class="dot ok"></i> Atende</span><span><i class="dot low"></i> Abaixo da meta</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section factory-story-section">
+      <div class="container factory-story-grid reveal">
+        <div class="factory-story-copy">
+          <span class="eyebrow">DO CHÃO DE FÁBRICA À DECISÃO</span>
+          <h2>Feito para quem vive linha, esteira, ritmo e meta do dia.</h2>
+          <p>O Moldar nasceu para organizar uma conversa comum na fábrica: onde a produção realmente aperta, o que vale conferir primeiro e como uma mudança em um setor afeta o restante da linha.</p>
+          <ul class="factory-story-list">
+            <li>Visual pensado para lembrar o ambiente real da produção.</li>
+            <li>Foco em setores, fluxo, atelier, postos e pares por dia.</li>
+            <li>Menos “cara de IA”, mais sensação de fábrica e operação.</li>
+          </ul>
+        </div>
+        <div class="factory-photo-stack" aria-label="Referência visual de fábrica de calçados">
+          <figure class="factory-photo-card photo-primary">
+            <img src="./assets/images/factory-line.png" alt="Linha de produção de calçados com operadores de uniforme azul trabalhando ao redor de uma esteira com pares sendo movimentados">
+            <figcaption>Quando um setor aperta, a esteira inteira sente.</figcaption>
+          </figure>
+          <figure class="factory-photo-card photo-secondary">
+            <img src="./assets/images/factory-packing.png" alt="Equipe de produção em fábrica de calçados embalando pares em caixas laranja ao longo de uma linha de expedição">
+            <figcaption>Do corte à expedição, olhar o fluxo completo melhora a decisão.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-surface" id="como-funciona">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <span class="eyebrow">DIRETO AO PONTO</span>
+            <h2>Você monta a análise em 5 passos.</h2>
+            <p>O Moldar mostra uma coisa de cada vez. Nada de formulário gigante nem painel cheio de número antes da hora.</p>
+          </div>
+          <a class="text-link" href="./simular/index.html">Começar com meus dados <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="how-interactive reveal" data-how>
+          <div class="how-nav" role="tablist" aria-label="Etapas do simulador">
+            <button class="how-tab is-active" type="button" role="tab" aria-selected="true" data-how-tab="0"><b>01</b><span>Meta</span></button>
+            <button class="how-tab" type="button" role="tab" aria-selected="false" data-how-tab="1"><b>02</b><span>Fluxo</span></button>
+            <button class="how-tab" type="button" role="tab" aria-selected="false" data-how-tab="2"><b>03</b><span>Capacidade</span></button>
+            <button class="how-tab" type="button" role="tab" aria-selected="false" data-how-tab="3"><b>04</b><span>Revisão</span></button>
+            <button class="how-tab" type="button" role="tab" aria-selected="false" data-how-tab="4"><b>05</b><span>Resultado</span></button>
+          </div>
+          <div class="how-stage">
+            <div class="how-copy" aria-live="polite">
+              <span class="eyebrow" data-how-kicker>PASSO 1</span>
+              <h3 data-how-title>Quanto precisa sair por dia?</h3>
+              <p data-how-text>Informe a meta, a jornada e os intervalos. O Moldar calcula o tempo disponível e o ritmo necessário para bater a meta.</p>
+              <a class="btn btn-primary" href="./simular/index.html">Abrir simulador</a>
+            </div>
+            <div class="how-visual" data-how-visual aria-hidden="true">
+              <div class="mock-window">
+                <div class="mock-top"><span></span><span></span><span></span><small>moldar / simular</small></div>
+                <div class="mock-content" data-how-mock>
+                  <div class="mock-label">META DIÁRIA</div>
+                  <div class="mock-input"><strong>500</strong><span>pares/dia</span></div>
+                  <div class="mock-row"><span>Jornada</span><b>8h</b></div>
+                  <div class="mock-row"><span>Intervalos</span><b>60 min</b></div>
+                  <div class="mock-output">Tempo disponível <b>7h</b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section example-section">
+      <div class="container example-grid reveal" data-home-demo>
+        <div class="example-copy">
+          <span class="eyebrow">UM “E SE?” EM 10 SEGUNDOS</span>
+          <h2>Melhorar uma etapa pode apenas mudar o problema de lugar.</h2>
+          <p>No exemplo, a Costura limita a linha em 460 pares/dia. Teste um posto a mais e veja o que muda.</p>
+          <div class="cta-row">
+            <button class="btn btn-primary" type="button" data-demo-open>Testar +1 posto na Costura</button>
+            <a class="btn btn-secondary" href="./simular/index.html">Usar meus números</a>
+          </div>
+          <p class="micro">Dados demonstrativos. Não representam produtividade média do setor.</p>
+        </div>
+        <div class="example-conveyor" aria-label="Exemplo demonstrativo de mudança de limitação">
+          <div class="example-track"><span class="example-part"><img src="./assets/svg/outsole.svg" alt=""></span></div>
+          <article class="example-node low"><span>Costura</span><strong>460</strong><small>pares/dia</small></article>
+          <article class="example-node low softer"><span>Montagem</span><strong>480</strong><small>pares/dia</small></article>
+          <div class="example-result"><small>Capacidade estimada da linha</small><strong>460/dia</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section diagnosis-teaser">
+      <div class="container diagnosis-teaser-inner reveal">
+        <div>
+          <span class="eyebrow light">QUANDO A DÚVIDA CONTINUA</span>
+          <h2>O simulador ajuda a enxergar onde a linha aperta. O Diagnóstico ajuda a decidir o próximo passo.</h2>
+          <p>Se a conta apontou Costura, Montagem ou atelier, mas a dúvida continua, o Diagnóstico Moldar revisa o fluxo, confere os números e compara caminhos antes de mexer na operação.</p>
+        </div>
+        <a class="btn btn-light" href="./diagnostico/index.html">Entender o Diagnóstico Moldar</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div><a class="brand footer-brand" href="./index.html"><span class="brand-sole" aria-hidden="true"><img src="./assets/svg/brand-shoe.svg" alt=""></span><span>MOLDAR</span></a><p>Ferramenta de diagnóstico preliminar de capacidade produtiva.</p></div>
+      <nav class="footer-nav" aria-label="Rodapé"><a href="./simular/index.html">Simulador</a><a href="./metodologia/index.html">Como calcula</a><a href="./diagnostico/index.html">Diagnóstico</a></nav>
+      <p>© <span data-current-year>2026</span> Moldar.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="home-demo-modal" hidden>
+    <div class="modal-backdrop" data-modal-close></div>
+    <section class="modal-card scenario-explain" role="dialog" aria-modal="true" aria-labelledby="home-demo-title">
+      <button class="modal-close" type="button" aria-label="Fechar" data-modal-close>×</button>
+      <span class="eyebrow">O QUE ACONTECEU?</span>
+      <h2 id="home-demo-title">A Costura melhora. A limitação muda.</h2>
+      <div class="scenario-before-after">
+        <div><small>Costura</small><strong><span>460</span><i>→</i><span class="good">575</span></strong><em>pares/dia</em></div>
+        <div><small>Capacidade da linha</small><strong><span>460</span><i>→</i><span class="warn">480</span></strong><em>pares/dia</em></div>
+      </div>
+      <div class="scenario-story">
+        <p><b>1.</b> A Costura deixa de ser a menor capacidade.</p>
+        <p><b>2.</b> A Montagem, com 480 pares/dia, passa a limitar a linha.</p>
+        <p><b>3.</b> A linha melhora só 20 pares/dia — não os 115 pares adicionados à Costura.</p>
+      </div>
+      <div class="scenario-conclusion"><span>Conclusão</span><strong>Melhorar um setor isoladamente pode apenas deslocar o ponto de atenção.</strong></div>
+      <div class="modal-actions"><button class="btn btn-secondary" type="button" data-modal-close>Entendi</button><a class="btn btn-primary" href="./simular/index.html">Testar minha produção</a></div>
+    </section>
+  </div>
+</body>
+</html>

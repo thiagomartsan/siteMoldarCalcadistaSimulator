@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Como o Moldar calcula a capacidade | Metodologia</title>
+  <meta name="description" content="Entenda de forma simples como o Moldar estima a capacidade produtiva, compara etapas com a meta e quais são os limites da análise.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#17324D">
+  <link rel="canonical" href="https://SEU-DOMINIO.com/metodologia/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html"><span class="brand-sole" aria-hidden="true"><img src="../assets/svg/brand-shoe.svg" alt=""></span><span>MOLDAR</span></a>
+      <nav class="simple-nav" aria-label="Metodologia"><a href="../simular/index.html">Simulador</a><a href="../diagnostico/index.html">Diagnóstico</a><a class="nav-cta" href="../index.html">Voltar ao início</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="method-hero">
+      <div class="container method-hero-grid">
+        <div class="reveal is-visible">
+          <span class="eyebrow">COMO O MOLDAR CALCULA</span>
+          <h1>Engenharia por baixo. Linguagem simples por cima.</h1>
+          <p class="lead">O Moldar faz uma estimativa de capacidade com os dados que você informa. Ele não tenta adivinhar paradas, perdas ou comportamentos que não foram medidos.</p>
+          <div class="hero-actions"><a class="btn btn-primary" href="../simular/index.html">Testar com meus dados</a><a class="btn btn-secondary" href="#limites">Ver limites da análise</a></div>
+        </div>
+        <div class="formula-machine reveal is-visible" aria-label="Fórmula simplificada de capacidade">
+          <div class="formula-machine-top"><span>CAPACIDADE ESTIMADA</span><i></i></div>
+          <div class="formula-machine-body">
+            <div class="formula-piece"><small>tempo disponível</small><strong>420 min</strong></div>
+            <span class="formula-op">÷</span>
+            <div class="formula-piece"><small>tempo por ciclo</small><strong>3 min</strong></div>
+            <span class="formula-op">×</span>
+            <div class="formula-piece"><small>pares por ciclo</small><strong>1</strong></div>
+            <span class="formula-op">×</span>
+            <div class="formula-piece"><small>postos paralelos</small><strong>4</strong></div>
+          </div>
+          <div class="formula-output"><span>=</span><strong>560</strong><small>pares/dia</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-surface">
+      <div class="container">
+        <div class="section-heading reveal"><div><span class="eyebrow">DOIS JEITOS DE INFORMAR</span><h2>Use o dado que você realmente conhece.</h2></div></div>
+        <div class="method-grid reveal">
+          <article class="method-card"><span class="method-number">01</span><h3>“Sei quantos pares fazemos”</h3><p>Informe a capacidade observada de um dia normal. Ex.: “a Costura costuma fazer 450 pares/dia”. É o caminho mais simples.</p><div class="method-example"><small>Capacidade informada</small><strong>450 pares/dia</strong></div></article>
+          <article class="method-card"><span class="method-number">02</span><h3>“Sei o tempo da operação”</h3><p>Informe tempo por ciclo, quantos pares saem e quantos postos iguais trabalham ao mesmo tempo. O Moldar calcula a capacidade estimada.</p><div class="method-example"><small>Capacidade calculada</small><strong>(tempo ÷ ciclo) × pares × postos</strong></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container method-story reveal">
+        <div>
+          <span class="eyebrow">POR QUE OLHAR A LINHA INTEIRA?</span>
+          <h2>Maior tempo por par não significa, sozinho, menor capacidade.</h2>
+          <p>Uma operação pode demorar mais por ciclo e ainda produzir mais porque existem vários postos trabalhando em paralelo. Por isso o Moldar compara a capacidade total das etapas, não apenas o maior tempo individual.</p>
+        </div>
+        <div class="comparison-machine">
+          <article><span>Preparação</span><strong>90 s/par</strong><small>2 postos</small><b>≈ 560/dia</b></article>
+          <article class="is-critical"><span>Costura</span><strong>60 s/par</strong><small>1 posto</small><b>≈ 420/dia</b></article>
+          <p>Mesmo mais rápida por par, a Costura tem menor capacidade neste exemplo.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-surface" id="limites">
+      <div class="container">
+        <div class="section-heading reveal"><div><span class="eyebrow">O QUE O RESULTADO SIGNIFICA</span><h2>Primeira leitura. Não sentença definitiva.</h2><p>O resultado ajuda a decidir onde investigar primeiro. Não substitui observação do processo real.</p></div></div>
+        <div class="limits-grid reveal">
+          <article class="limit-card good"><h3>O Moldar consegue</h3><ul><li>comparar capacidade e meta;</li><li>mostrar etapas abaixo da meta;</li><li>estimar a capacidade de uma linha serial;</li><li>testar cenários quando existem dados suficientes.</li></ul></article>
+          <article class="limit-card"><h3>O Moldar não afirma sozinho</h3><ul><li>onde está o gargalo “real” em qualquer condição;</li><li>o efeito de filas, lotes e retrabalho não informados;</li><li>o impacto de falta de material ou variações de produto;</li><li>que adicionar gente necessariamente aumenta produção.</li></ul></article>
+        </div>
+        <div class="method-note reveal"><span>Importante</span><p>Use o resultado como um ponto de partida: confirme se os números representam um dia normal e observe se existem condições relevantes que ficaram fora da simulação.</p></div>
+      </div>
+    </section>
+
+    <section class="section section-dark compact-cta">
+      <div class="container section-heading reveal"><div><span class="eyebrow light">AGORA COM SEUS NÚMEROS</span><h2>Monte o fluxo e veja o que a sua linha mostra.</h2></div><a class="btn btn-light" href="../simular/index.html">Abrir simulador</a></div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-grid"><div><a class="brand footer-brand" href="../index.html"><span class="brand-sole" aria-hidden="true"><img src="../assets/svg/brand-shoe.svg" alt=""></span><span>MOLDAR</span></a><p>Ferramenta de diagnóstico preliminar de capacidade produtiva.</p></div><nav class="footer-nav"><a href="../simular/index.html">Simulador</a><a href="../diagnostico/index.html">Diagnóstico</a><a href="../index.html">Início</a></nav><p>© <span data-current-year>2026</span> Moldar.</p></div></footer>
+</body>
+</html>

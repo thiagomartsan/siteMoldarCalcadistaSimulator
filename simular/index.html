@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulador de Capacidade Produtiva | Moldar</title>
+  <meta name="description" content="Monte sua linha de produção em 5 passos, compare a capacidade das etapas com a meta diária e teste cenários no Moldar.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#17324D">
+  <link rel="canonical" href="https://SEU-DOMINIO.com/simular/">
+  <meta property="og:site_name" content="Moldar">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Simulador de Capacidade Produtiva | Moldar">
+  <meta property="og:description" content="Informe sua meta, monte o fluxo e veja onde a capacidade pode estar apertando.">
+  <meta property="og:url" content="https://SEU-DOMINIO.com/simular/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="../assets/js/simulator.js" defer></script>
+</head>
+<body class="sim-page">
+  <header class="sim-header">
+    <div class="container sim-header-inner">
+      <a class="brand" href="../index.html" aria-label="Moldar - início">
+        <span class="brand-sole" aria-hidden="true"><img src="../assets/svg/brand-shoe.svg" alt=""></span><span>MOLDAR</span>
+      </a>
+      <div class="sim-header-actions">
+        <button class="help-link" type="button" id="reopen-onboarding">? Como usar</button>
+        <a class="nav-cta" href="../index.html">Sair do simulador</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="simulator-shell" id="simulator-wizard">
+    <section class="simulator-main">
+      <div class="wizard-intro">
+        <div>
+          <span class="eyebrow">SIMULADOR</span>
+          <h1>Monte sua produção passo a passo.</h1>
+          <p>Você informa o que conhece. O Moldar organiza a conta e mostra onde vale investigar primeiro.</p>
+        </div>
+        <button class="btn btn-secondary btn-small" type="button" id="load-example">Carregar exemplo pronto</button>
+      </div>
+
+      <div class="wizard-progress-wrap">
+        <div class="wizard-progress-meta">
+          <span id="wizard-step-label">Passo 1 de 5 · Meta e jornada</span>
+          <strong id="wizard-progress-text">20%</strong>
+        </div>
+        <div class="wizard-progress-track"><span id="wizard-progress-bar" style="width:20%"></span></div>
+        <div class="wizard-progress-steps" aria-label="Etapas do simulador">
+          <button class="wizard-progress-step is-active" type="button" data-progress-step="1" disabled><b>1</b><span>Meta</span></button>
+          <button class="wizard-progress-step" type="button" data-progress-step="2" disabled><b>2</b><span>Fluxo</span></button>
+          <button class="wizard-progress-step" type="button" data-progress-step="3" disabled><b>3</b><span>Capacidade</span></button>
+          <button class="wizard-progress-step" type="button" data-progress-step="4" disabled><b>4</b><span>Revisão</span></button>
+          <button class="wizard-progress-step" type="button" data-progress-step="5" disabled><b>5</b><span>Resultado</span></button>
+        </div>
+      </div>
+
+      <section class="wizard-card" aria-live="polite">
+        <div class="wizard-slide is-active" data-step-panel="1">
+          <div class="wizard-panel-head">
+            <div><span class="eyebrow">PASSO 1</span><h2>Qual é a meta da produção?</h2><p>Primeiro, vamos entender quanto precisa sair e quanto tempo existe para produzir.</p></div>
+            <span class="tip-pill">Comece com um dia normal</span>
+          </div>
+          <div class="schedule-grid">
+            <label class="field"><span>Quantos pares você precisa produzir por dia?</span><div class="input-with-unit"><input class="input" id="meta" type="number" min="1" step="1" inputmode="decimal" placeholder="500"><span>pares/dia</span></div></label>
+            <label class="field"><span>Quantas horas a produção trabalha por dia?</span><div class="input-with-unit"><input class="input" id="hours" type="number" min="0.25" max="24" step="0.25" inputmode="decimal" placeholder="8"><span>horas</span></div></label>
+            <label class="field"><span>Tempo total de intervalos nesse período</span><div class="input-with-unit"><input class="input" id="breaks" type="number" min="0" step="1" inputmode="decimal" placeholder="60"><span>minutos</span></div></label>
+          </div>
+          <div class="schedule-insight" id="schedule-preview">
+            <span class="insight-icon" aria-hidden="true">↳</span>
+            <div><small>O Moldar calcula aqui</small><strong>Preencha os campos para ver o tempo disponível e o ritmo necessário.</strong></div>
+          </div>
+        </div>
+
+        <div class="wizard-slide" data-step-panel="2" hidden>
+          <div class="wizard-panel-head">
+            <div><span class="eyebrow">PASSO 2</span><h2>Como o par passa pela sua produção?</h2><p>Use o exemplo como ponto de partida. Mude os nomes, a ordem e as etapas até ficar parecido com a sua realidade.</p></div>
+            <span class="tip-pill">Tudo é editável</span>
+          </div>
+          <div class="stage-editor" id="stage-editor"></div>
+          <button class="add-stage-card" type="button" id="add-stage"><span>+</span><div><strong>Adicionar etapa</strong><small>Ex.: Chanfragem, Aplicação de adesivo, Embalagem...</small></div></button>
+        </div>
+
+        <div class="wizard-slide" data-step-panel="3" hidden>
+          <div class="wizard-panel-head">
+            <div><span class="eyebrow">PASSO 3</span><h2>Quanto cada etapa consegue fazer?</h2><p>Preencha uma etapa por vez. O preview da fábrica vai mudando enquanto você avança.</p></div>
+            <span class="tip-pill" id="capacity-counter">0 de 6 completas</span>
+          </div>
+          <div class="capacity-step-layout">
+            <nav class="capacity-stage-nav" id="capacity-stage-nav" aria-label="Etapas da produção"></nav>
+            <div class="capacity-stage-editor" id="capacity-stage-editor"></div>
+          </div>
+        </div>
+
+        <div class="wizard-slide" data-step-panel="4" hidden>
+          <div class="wizard-panel-head">
+            <div><span class="eyebrow">PASSO 4</span><h2>Confere com a sua realidade?</h2><p>Revise a meta e as capacidades antes do diagnóstico. Você pode voltar e corrigir qualquer etapa.</p></div>
+            <span class="tip-pill">Última conferência</span>
+          </div>
+          <div id="review-content"></div>
+        </div>
+
+        <div class="wizard-slide result-slide" data-step-panel="5" hidden>
+          <div id="results-content"></div>
+        </div>
+
+        <div class="validation-box" id="wizard-validation" hidden></div>
+        <div class="wizard-actions">
+          <button class="btn btn-secondary" type="button" id="wizard-back" hidden>← Voltar</button>
+          <span></span>
+          <button class="btn btn-primary" type="button" id="wizard-next">Continuar →</button>
+        </div>
+      </section>
+    </section>
+
+    <aside class="factory-preview-wrap" aria-label="Prévia visual da produção">
+      <div class="factory-preview" id="factory-preview">
+        <div class="preview-head">
+          <div><span class="eyebrow">SUA MINI FÁBRICA</span><h2 id="preview-title">Comece pela meta</h2></div>
+          <span class="preview-live"><i></i> atualiza ao vivo</span>
+        </div>
+        <div class="preview-canvas">
+          <div class="preview-wall"><span>MOLDAR · LINHA DE PRODUÇÃO</span></div>
+          <div class="preview-floor"></div>
+          <div class="preview-conveyor"><span class="preview-belt"></span></div>
+          <div class="preview-part"><img src="../assets/svg/outsole.svg" alt=""></div>
+          <div class="preview-stages" id="preview-stages"></div>
+          <div class="preview-status" id="preview-status">
+            <small>Enquanto você preenche</small>
+            <strong>o fluxo aparece aqui.</strong>
+          </div>
+        </div>
+        <div class="preview-summary" id="preview-summary">
+          <div><small>Meta</small><strong>—</strong></div>
+          <div><small>Tempo disponível</small><strong>—</strong></div>
+          <div><small>Etapas completas</small><strong>0/6</strong></div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <div class="onboarding" id="onboarding" hidden>
+    <div class="onboarding-backdrop"></div>
+    <section class="onboarding-card" role="dialog" aria-modal="true" aria-labelledby="onboarding-title">
+      <span class="onboarding-kicker" data-onboarding-kicker></span>
+      <h2 id="onboarding-title" data-onboarding-title></h2>
+      <p data-onboarding-text></p>
+      <div class="onboarding-visual" data-onboarding-visual aria-hidden="true"></div>
+      <div class="onboarding-dots" id="onboarding-dots" aria-hidden="true"></div>
+      <div class="onboarding-actions"><button class="text-button" type="button" id="onboarding-skip">Pular dicas</button><button class="btn btn-primary" type="button" id="onboarding-next">Próximo</button></div>
+    </section>
+  </div>
+
+  <div class="modal" id="scenario-modal" hidden>
+    <div class="modal-backdrop" data-scenario-close></div>
+    <section class="modal-card scenario-modal-card" role="dialog" aria-modal="true" aria-labelledby="scenario-modal-title">
+      <button class="modal-close" type="button" aria-label="Fechar" data-scenario-close>×</button>
+      <span class="eyebrow">CENÁRIO “E SE?”</span>
+      <h2 id="scenario-modal-title">O que mudaria?</h2>
+      <div id="scenario-modal-content"></div>
+      <div class="modal-actions"><button class="btn btn-secondary" type="button" data-scenario-close>Cancelar</button><button class="btn btn-primary" type="button" id="scenario-apply">Aplicar cenário</button></div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
